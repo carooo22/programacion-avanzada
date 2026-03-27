@@ -1,0 +1,124 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOCzPNh4cnsG5SjD+/thfL2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/carooo22/programacion-avanzada/blob/main/limites\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 76,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 39
+        },
+        "id": "dthQCYnB_jza",
+        "outputId": "d82834df-ed17-4892-a85d-32a799f52ea2"
+      },
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "log(x)"
+            ],
+            "text/latex": "$\\displaystyle \\log{\\left(x \\right)}$"
+          },
+          "metadata": {}
+        }
+      ],
+      "source": [
+        "import sympy as sp\n",
+        "from sympy import exp, symbols\n",
+        "sp.init_printing()\n",
+        "\n",
+        "x = sp.symbols('x')\n",
+        "y = sp.exp(x)\n",
+        "z = sp.log(x)\n",
+        "display(z)\n",
+        "theta = sp.symbols('theta')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "f1 = (sp.log(x))/x\n",
+        "f1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 53
+        },
+        "id": "UZApg8IaAalc",
+        "outputId": "be555d81-3d45-4b5b-e166-d5a6391ba528"
+      },
+      "execution_count": 86,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "log(x)\n",
+              "──────\n",
+              "  x   "
+            ],
+            "text/latex": "$\\displaystyle \\frac{\\log{\\left(x \\right)}}{x}$"
+          },
+          "metadata": {},
+          "execution_count": 86
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "limite_inf = sp.limit(f1, x, sp.oo)\n",
+        "\n",
+        "print(f\"\\n2. Límite de ln(x)/x cuando x -> ∞:\")\n",
+        "print(f\"   Resultado: {limite_inf}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FXpMjQojB4Wc",
+        "outputId": "99c71e06-8037-4edf-f127-6d8e724c54de"
+      },
+      "execution_count": 88,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "2. Límite de ln(x)/x cuando x -> ∞:\n",
+            "   Resultado: 0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
